@@ -7,7 +7,7 @@ function App() {
     <>
       <Navbar />
       <Hero />
-      <ItemListContainer />
+      <ItemListContainer title='Main Title Soon...' />
     </>
   );
 }

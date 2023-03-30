@@ -1,7 +1,7 @@
-const ItemListContainer = () => {
+const ItemListContainer = ({ title }) => {
   return (
     <section className="container content">
-      <h2>Items List 1</h2>
+      <h2> {title} </h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
         suscipit cum laboriosam. Assumenda doloremque perspiciatis eum

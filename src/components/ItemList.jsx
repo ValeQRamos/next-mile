@@ -5,7 +5,7 @@ import shoes from "../utils/data"
 
 const ItemList = () => {
   const [shoesList, setShoesList] = useState(shoes)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
 
   if(loading){
     return <Loading />

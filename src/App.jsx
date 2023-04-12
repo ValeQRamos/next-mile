@@ -1,13 +1,15 @@
-import Navbar from "./components/Navbar";
-import ItemListContainer from "./components/ItemListContainer";
+import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
   return (
     <>
       <Navbar />
       <Hero />
-      <ItemListContainer title='Main Title Soon...' />
+      <ItemListContainer greeting="Main Title Soon..." />
+      <ItemDetailContainer />
     </>
   );
 }

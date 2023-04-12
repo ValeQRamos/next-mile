@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import CartWidget from "./CartWidget";
+import './Navbar.css'
+import CartWidget from "../CarWidget/CartWidget";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);

@@ -1,0 +1,6 @@
+.item-list{
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

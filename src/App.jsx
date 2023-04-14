@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero";
+import Hero from "./components/Hero/Hero";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 

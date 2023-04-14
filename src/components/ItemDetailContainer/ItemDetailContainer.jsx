@@ -1,6 +1,6 @@
+import './ItemDetailContainer.css'
 import { useState, useEffect } from "react";
 import { getProductById } from "../../utils/data";
-import Loading from "../Loading/Loading";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {

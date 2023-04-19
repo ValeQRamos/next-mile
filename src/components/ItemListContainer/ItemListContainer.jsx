@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../utils/data";
 import Loading from "../Loading/Loading";
@@ -42,8 +41,7 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <>
-      {/* Activar Hero luego */}
-      {/* <Hero /> */}
+      {!type && <Hero />}
       <section className="container content">
         <h2 className="item-title"> {greeting} </h2>
         <div className="item-list">

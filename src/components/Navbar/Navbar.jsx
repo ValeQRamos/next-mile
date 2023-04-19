@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
-import './Navbar.css'
+import { useState } from "react";
+import "./Navbar.css";
 import CartWidget from "../CarWidget/CartWidget";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
@@ -13,17 +14,17 @@ const Navbar = () => {
     <nav className={`nav ${active ? "active" : ""}`}>
       <div className="container">
         <h1 className="logo">
-          <a href="#"> Next Mile </a>
+          <Link to="/">Next Mile</Link>
         </h1>
         <ul>
           <li>
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#">About</a>
+            <Link to="/category/Trail">Trail</Link>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <Link to="/category/Road">Road</Link>
           </li>
           <CartWidget />
         </ul>

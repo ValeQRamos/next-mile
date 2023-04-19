@@ -13,6 +13,10 @@
   justify-content: center;
 }
 
+.item-detail-img > img {
+  width: 200px;
+}
+
 .item-detail-title {
   text-align: center;
   font-size: 2rem;
@@ -50,11 +54,16 @@
     flex-direction: row;
     align-items: center;
   }
+  .item-detail-img > img {
+    width: 400px;
+  }
   .item-detail-title {
     text-align: start;
+    font-weight: 300;
   }
   .item-detail-subtitle {
     font-size: 1.4rem;
     text-align: start;
+    font-weight: 300;
   }
 }

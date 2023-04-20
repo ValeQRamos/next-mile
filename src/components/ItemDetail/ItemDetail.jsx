@@ -1,11 +1,18 @@
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ product }) => {
   const { id, title, subtitle, type, price, stock, img, description } = product;
 
+  const [quantityAdded, setQuantityAdd] = useState(0);
   const [readMore, setReadMore] = useState(false);
+
+  const handleOnAdd = (quantity) => {
+    console.log("Cantidad Agregada ->", quantity);
+    setQuantityAdd(quantity);
+  };
 
   return (
     <div className="item-detail">
@@ -19,15 +26,22 @@ const ItemDetail = ({ product }) => {
         <h4 className="item-detail-subtitle"> {subtitle} </h4>
         <p className="item-detail-description">
           {readMore ? description : description.substring(0, 100)}
-          <button className="btn-read-more" onClick={() => setReadMore(!readMore)}>
+          <button
+            className="btn-read-more"
+            onClick={() => setReadMore(!readMore)}
+          >
             {!readMore ? "show more..." : "show less"}
           </button>
         </p>
-        <ItemCount
-          initial={1}
-          stock={stock}
-          onAdd={(quantity) => console.log("Cantidad Agregada", quantity)}
-        />
+        {quantityAdded > 0 ? (
+          <div className="btn-checkout-container">
+            <Link to="/cart">
+              <button className="btn-checkout">Checkout</button>
+            </Link>
+          </div>
+        ) : (
+          <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />
+        )}
       </div>
     </div>
   );

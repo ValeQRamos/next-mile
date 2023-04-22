@@ -1,6 +1,8 @@
+import "./ItemListContainer.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../utils/data";
+
 import Loading from "../Loading/Loading";
 import Hero from "../Hero/Hero";
 import ItemList from "../ItemList/ItemList";

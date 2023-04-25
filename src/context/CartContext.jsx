@@ -1,0 +1,57 @@
+import { createContext, useContext, useState } from "react";
+
+export const CartContext = createContext([]);
+
+export const useCartContext = () => useContext(CartContext);
+
+export const CartContextProvider = ({ children }) => {
+  const [cartList, setCartList] = useState([]);
+
+  const addToCart = (newProduct) => {
+    setCartList([...cartList, newProduct]);
+  };
+
+  const removeItem = (id) => {
+    const cartUpdated = cartList.filter((prod) => prod.id !== id);
+    setCartList(cartUpdated);
+  };
+
+  const clearCart = () => {
+    setCartList([]);
+  };
+
+  const isInCart = (id) => {
+    return cartList.some((prod) => prod.id === id);
+  };
+
+  const totalToPay = () => {
+    if (!cartList.length) return 0;
+    return cartList
+      .map((prod) => prod.price * prod.quantity)
+      .reduce((a, b) => a + b);
+  };
+
+  const totalItems = () => {
+    if (!cartList.length) return 0;
+    return cartList.map((prod) => prod.quantity).reduce((a, b) => a + b);
+  };
+
+  // Cantidad total de productos
+  // No duplicados
+
+  return (
+    <CartContext.Provider
+      value={{
+        cartList,
+        addToCart,
+        removeItem,
+        clearCart,
+        isInCart,
+        totalToPay,
+        totalItems,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
+};

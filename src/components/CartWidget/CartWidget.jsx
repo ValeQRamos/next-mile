@@ -1,14 +1,15 @@
 import { FaShoppingCart } from "react-icons/fa";
 import { useCartContext } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 
 const CartWidget = () => {
   const { totalItems } = useCartContext();
   return (
     <div className="cart">
       {totalItems() > 0 && (
-        <li>
+        <Link to="/cart">
           <FaShoppingCart /> {totalItems()}
-        </li>
+        </Link>
       )}
     </div>
   );

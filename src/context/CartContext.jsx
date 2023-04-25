@@ -28,7 +28,8 @@ export const CartContextProvider = ({ children }) => {
     if (!cartList.length) return 0;
     return cartList
       .map((prod) => prod.price * prod.quantity)
-      .reduce((a, b) => a + b);
+      .reduce((a, b) => a + b)
+      .toFixed(2);
   };
 
   const totalItems = () => {
@@ -36,7 +37,6 @@ export const CartContextProvider = ({ children }) => {
     return cartList.map((prod) => prod.quantity).reduce((a, b) => a + b);
   };
 
-  // Cantidad total de productos
   // No duplicados
 
   return (

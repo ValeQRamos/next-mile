@@ -1,6 +1,12 @@
 .cart-container {
-  border: 1px solid crimson;
-  margin-top: 75px;
+  margin-top: 85px;
+}
+
+.empty-cart{
+  margin-top: 85px;
+  font-size: 40px;
+  text-align: center;
+  font-weight: 300;
 }
 
 .cart-item-container {

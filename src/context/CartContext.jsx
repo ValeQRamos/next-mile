@@ -8,7 +8,12 @@ export const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
 
   const addToCart = (newProduct) => {
-    setCartList([...cartList, newProduct]);
+    if (!isInCart(newProduct.id)) {
+      setCartList([...cartList, newProduct]);
+    } else {
+      let product = cartList.find((prod) => prod.id === newProduct.id);
+      product.quantity += newProduct.quantity;
+    }
   };
 
   const removeItem = (id) => {

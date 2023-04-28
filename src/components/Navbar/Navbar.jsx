@@ -1,10 +1,12 @@
 import "./Navbar.css";
 import { useState, useEffect } from "react";
 import CartWidget from "../CartWidget/CartWidget";
+import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
+  const { totalItems } = useCartContext();
 
   const changeColor = () => {
     window.scrollY >= 150 ? setActive(true) : setActive(false);
@@ -31,7 +33,7 @@ const Navbar = () => {
           <li>
             <Link to="/category/Road">Road</Link>
           </li>
-          <CartWidget />
+          {totalItems() > 0 && <CartWidget />}
         </ul>
       </div>
     </nav>

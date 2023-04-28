@@ -6,11 +6,10 @@ const CartWidget = () => {
   const { totalItems } = useCartContext();
   return (
     <div className="cart">
-      {totalItems() > 0 && (
         <Link to="/cart">
           <FaShoppingCart /> {totalItems()}
         </Link>
-      )}
+
     </div>
   );
 };

@@ -11,9 +11,10 @@ export const CartContextProvider = ({ children }) => {
     if (!isInCart(newProduct.id)) {
       setCartList([...cartList, newProduct]);
     } else {
-      // let product = cartList.find((prod) => prod.id === newProduct.id);
-      // product.quantity += newProduct.quantity;
-      console.log('item already in cart')
+      let product = cartList.find((prod) => prod.id === newProduct.id);
+      newProduct.quantity = product.quantity + newProduct.quantity;
+      const cartUpdated = cartList.filter((prod) => prod.id !== product.id);
+      setCartList([...cartUpdated, newProduct ])
     }
   };
 
@@ -42,8 +43,6 @@ export const CartContextProvider = ({ children }) => {
     if (!cartList.length) return 0;
     return cartList.map((prod) => prod.quantity).reduce((a, b) => a + b);
   };
-
-  // No duplicados
 
   return (
     <CartContext.Provider

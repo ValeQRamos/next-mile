@@ -11,8 +11,9 @@ export const CartContextProvider = ({ children }) => {
     if (!isInCart(newProduct.id)) {
       setCartList([...cartList, newProduct]);
     } else {
-      let product = cartList.find((prod) => prod.id === newProduct.id);
-      product.quantity += newProduct.quantity;
+      // let product = cartList.find((prod) => prod.id === newProduct.id);
+      // product.quantity += newProduct.quantity;
+      console.log('item already in cart')
     }
   };
 

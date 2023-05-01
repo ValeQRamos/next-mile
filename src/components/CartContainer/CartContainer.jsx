@@ -16,7 +16,9 @@ const CartContainer = () => {
               alt={prod.title}
             />
             <label>
-              {prod.title} | Price: ${prod.price} | Qty: {prod.quantity}
+              <p className="cart-info">
+                {prod.title} | Price: ${prod.price} | Qty: {prod.quantity}
+              </p>
             </label>
             <button className="remove-item" onClick={() => removeItem(prod.id)}>
               X
@@ -38,6 +40,5 @@ const CartContainer = () => {
       </div>
     );
   }
-
 };
 export default CartContainer;

@@ -2,7 +2,7 @@
   margin-top: 85px;
 }
 
-.empty-cart{
+.empty-cart {
   margin-top: 85px;
   font-size: 40px;
   text-align: center;
@@ -61,11 +61,14 @@
 }
 
 .clear-cart:active {
-  transform: scale(0.98)
+  transform: scale(0.98);
 }
 
 @media (max-width: 600px) {
   .cart-img {
     display: none;
+  }
+  .cart-info {
+    margin-left: 10px;
   }
 }

@@ -11,7 +11,7 @@ const CartContainer = () => {
           <div key={prod.id} className="cart-item-container">
             <img
               className="cart-img"
-              src={prod.img}
+              src={prod.img[4]}
               width={150}
               alt={prod.title}
             />

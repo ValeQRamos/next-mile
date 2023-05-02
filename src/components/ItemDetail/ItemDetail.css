@@ -11,10 +11,18 @@
 .item-detail-img {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .item-detail-img > img {
   width: 200px;
+}
+
+.item-detail-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--secondary-blue-color);
+  font-size: 25px;
 }
 
 .item-detail-title {
@@ -48,7 +56,7 @@
   color: crimson;
 }
 
-.btn-checkout-container{
+.btn-checkout-container {
   display: flex;
   justify-content: center;
 }
@@ -76,6 +84,9 @@
   }
   .item-detail-img > img {
     width: 400px;
+  }
+  .item-detail-btn {
+    font-size: 35px;
   }
   .item-detail-title {
     text-align: start;

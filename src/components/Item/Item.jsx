@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Item = ({ product }) => {
   const { id, title, subtitle, stock, img } = product;
-  // type , price , description
+
   return (
     <div className="item">
       <header className="item-header">
@@ -17,7 +17,7 @@ const Item = ({ product }) => {
         </Link>
       </header>
       <div className="item-img">
-        <img src={img} alt={title} />
+        <img src={img[0]} alt={title} />
       </div>
       <footer className="item-footer">
         <h3>{title}</h3>

@@ -4,13 +4,28 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 
+import { BiCaretLeft, BiCaretRight } from "react-icons/bi";
+
 const ItemDetail = ({ product }) => {
-  const { id, title, subtitle, type, price, stock, img, description } = product;
+  const { title, subtitle, price, stock, img, description } = product;
 
   const [quantityAdded, setQuantityAdd] = useState(0);
   const [readMore, setReadMore] = useState(false);
+  const [photoDisplay, setPhotoDisplay] = useState(0);
 
   const { addToCart } = useCartContext();
+
+  const handleNext = () => {
+    photoDisplay < img.length - 1
+      ? setPhotoDisplay(photoDisplay + 1)
+      : setPhotoDisplay(0);
+  };
+
+  const handlePrev = () => {
+    photoDisplay > 0
+      ? setPhotoDisplay(photoDisplay - 1)
+      : setPhotoDisplay(img.length - 1);
+  };
 
   const handleOnAdd = (quantity) => {
     addToCart({ ...product, quantity });
@@ -20,7 +35,13 @@ const ItemDetail = ({ product }) => {
   return (
     <div className="item-detail">
       <div className="item-detail-img">
-        <img src={img} alt={title} />
+        <button className="item-detail-btn" onClick={handlePrev}>
+          <BiCaretLeft />
+        </button>
+        <img src={img[photoDisplay]} alt={title} />
+        <button className="item-detail-btn" onClick={handleNext}>
+          <BiCaretRight />
+        </button>
       </div>
       <div className="item-detail-info">
         <h2 className="item-detail-title">

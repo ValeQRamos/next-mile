@@ -25,6 +25,10 @@
   font-size: 25px;
 }
 
+.item-detail-arrow:active {
+  transform: scale(0.92);
+}
+
 .item-detail-title {
   text-align: center;
   font-size: 2rem;

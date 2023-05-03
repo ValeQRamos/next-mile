@@ -36,11 +36,11 @@ const ItemDetail = ({ product }) => {
     <div className="item-detail">
       <div className="item-detail-img">
         <button className="item-detail-btn" onClick={handlePrev}>
-          <BiCaretLeft />
+          <BiCaretLeft className="item-detail-arrow" />
         </button>
         <img src={img[photoDisplay]} alt={title} />
         <button className="item-detail-btn" onClick={handleNext}>
-          <BiCaretRight />
+          <BiCaretRight className="item-detail-arrow" />
         </button>
       </div>
       <div className="item-detail-info">

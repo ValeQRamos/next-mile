@@ -3,6 +3,18 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../utils/data";
 
+// Firestore
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
+
+// Components
 import Loading from "../Loading/Loading";
 import Hero from "../Hero/Hero";
 import ItemList from "../ItemList/ItemList";
@@ -14,28 +26,32 @@ const ItemListContainer = ({ greeting }) => {
   const { type } = useParams();
 
   useEffect(() => {
+    const dbFireStore = getFirestore();
+    const queryCollection = collection(dbFireStore, "products");
+
     if (!type) {
-      getProducts()
-        .then((response) => {
-          setProducts(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-        .finally(() => {
-          setIsLoading(false);
-        });
+      getDocs(queryCollection)
+        .then((resp) =>
+          setProducts(
+            resp.docs.map((product) => ({ id: product.id, ...product.data() }))
+          )
+        )
+        .catch((error) => console.log(error))
+        .finally(setIsLoading(false));
     } else {
-      getProducts()
-        .then((response) => {
-          setProducts(response.filter((product) => product.type === type));
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-        .finally(() => {
-          setIsLoading(false);
-        });
+      const queryCollectionFiltered = query(
+        queryCollection,
+        where("type", "==", type)
+      );
+
+      getDocs(queryCollectionFiltered)
+        .then((resp) =>
+          setProducts(
+            resp.docs.map((product) => ({ id: product.id, ...product.data() }))
+          )
+        )
+        .catch((error) => console.log(error))
+        .finally(setIsLoading(false));
     }
   }, [type]);
 

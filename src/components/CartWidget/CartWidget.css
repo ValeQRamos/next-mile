@@ -1,0 +1,7 @@
+.cart-icon {
+  width: 20px;
+}
+
+.cart > a > span {
+  padding: 2px;
+}

@@ -1,5 +1,6 @@
 import "./Item.css";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Item = ({ product }) => {
   const { id, title, subtitle, stock, img } = product;
@@ -13,7 +14,12 @@ const Item = ({ product }) => {
           </p>
         </div>
         <Link to={`/detail/${id}`} className="btn-details">
-          <button className="btn btn-details">More Details</button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            className="btn btn-details"
+          >
+            More Details
+          </motion.button>
         </Link>
       </header>
       <div className="item-img">

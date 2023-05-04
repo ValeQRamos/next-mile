@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 
 import { BiCaretLeft, BiCaretRight } from "react-icons/bi";
+import { motion } from "framer-motion";
 
 const ItemDetail = ({ product }) => {
   const { title, subtitle, price, stock, img, description } = product;
@@ -35,13 +36,23 @@ const ItemDetail = ({ product }) => {
   return (
     <div className="item-detail">
       <div className="item-detail-img">
-        <button className="item-detail-btn" onClick={handlePrev}>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.8 }}
+          className="item-detail-btn"
+          onClick={handlePrev}
+        >
           <BiCaretLeft className="item-detail-arrow" />
-        </button>
+        </motion.button>
         <img src={img[photoDisplay]} alt={title} />
-        <button className="item-detail-btn" onClick={handleNext}>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.8 }}
+          className="item-detail-btn"
+          onClick={handleNext}
+        >
           <BiCaretRight className="item-detail-arrow" />
-        </button>
+        </motion.button>
       </div>
       <div className="item-detail-info">
         <h2 className="item-detail-title">
@@ -60,7 +71,12 @@ const ItemDetail = ({ product }) => {
         {quantityAdded > 0 ? (
           <div className="btn-checkout-container">
             <Link to="/cart">
-              <button className="btn-checkout">Checkout</button>
+              <motion.button
+                whileHover={{ scale: 1.2 }}
+                className="btn-checkout"
+              >
+                Checkout
+              </motion.button>
             </Link>
           </div>
         ) : (

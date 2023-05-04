@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: larger;
 }
 
 .item-count-container .btn {
@@ -19,19 +20,15 @@
   border: none;
   background-color: var(--secondary-blue-color);
   color: #fff;
+  user-select: none;
 }
 
 .item-count-quantity {
-  padding: 10px 15px;
-}
-
-.btn-cart {
-  width: 40px;
-  height: 45px;
-}
-
-.btn-cart:active {
-  transform: scale(0.95);
+  padding: 5px 15px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: crimson;
+  user-select: none;
 }
 
 .btn-quantity-container {
@@ -45,6 +42,7 @@
   width: 60%;
 }
 
-.btn-quantity:active {
-  transform: scale(0.98);
+.motion {
+  width: 16px;
+  height: 16px;
 }

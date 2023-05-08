@@ -14,7 +14,7 @@ export const CartContextProvider = ({ children }) => {
       let product = cartList.find((prod) => prod.id === newProduct.id);
       newProduct.quantity = product.quantity + newProduct.quantity;
       const cartUpdated = cartList.filter((prod) => prod.id !== product.id);
-      setCartList([...cartUpdated, newProduct ])
+      setCartList([...cartUpdated, newProduct]);
     }
   };
 

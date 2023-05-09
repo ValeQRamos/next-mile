@@ -52,6 +52,7 @@
 
 .clear-cart {
   border: none;
+  cursor: pointer;
   color: #fff;
   background-color: crimson;
   font-family: inherit;
@@ -60,8 +61,8 @@
   margin: 5px;
 }
 
-.clear-cart:active {
-  transform: scale(0.98);
+.checkout-cart {
+  text-decoration: none;
 }
 
 @media (max-width: 600px) {

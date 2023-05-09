@@ -28,13 +28,13 @@ const CartContainer = () => {
           </div>
         ))}
         <h2 className="cart-total">
-          TOTAL: <span> ${totalToPay()} </span>
+          Total: <span> ${totalToPay()} </span>
         </h2>
         <div className="clear-cart-container">
           <button className="clear-cart" onClick={clearCart}>
             Clear Cart
           </button>
-          <Link to={"/checkout"} className="clear-cart">
+          <Link to={"/checkout"} className="clear-cart checkout-cart">
             Checkout
           </Link>
         </div>

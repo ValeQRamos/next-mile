@@ -4,8 +4,8 @@ import { useCartContext } from "../../context/CartContext";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
-// React Icon
 import { HiOutlineCheckCircle } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
   const { cartList, clearCart, removeItem, totalToPay } = useCartContext();
@@ -29,11 +29,10 @@ const Checkout = () => {
       quantity,
     }));
     order.total = totalToPay();
-    console.log("ORDER:", order);
 
     const dbFirestore = getFirestore();
 
-    // CREATE
+    // CREATE order
     const orderCollection = collection(dbFirestore, "orders");
     addDoc(orderCollection, order)
       .then((resp) => setOrderId(resp.id))
@@ -53,6 +52,7 @@ const Checkout = () => {
           <h3> Hey {dataForm?.name} </h3>
           <h1> Your order is Confirmed! </h1>
           <p> Order Id : {orderId} </p>
+          <Link className="link-back" to="/">Back to Home</Link>
         </div>
       </div>
     );
@@ -60,8 +60,7 @@ const Checkout = () => {
 
   return (
     <div className="checkout-form-container">
-      <br /> <br /> <br /> <br /> <br />
-      <h1> Checkout </h1>
+
       <CheckoutForm
         handleChange={handleChange}
         dataForm={dataForm}

@@ -15,11 +15,15 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<ItemListContainer greeting="Main Title Soon..." />}
+            element={
+              <ItemListContainer greeting="Something cool to say here..." />
+            }
           />
           <Route
             path="/category/:type"
-            element={<ItemListContainer greeting="Main Title Soon..." />}
+            element={
+              <ItemListContainer greeting="Something cool to say here..." />
+            }
           />
           <Route path="/detail/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<CartContainer />} />

@@ -6,7 +6,7 @@ const Hero = () => {
       <div className="container">
         <h1>Welcome To Next Mile</h1>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, earum.
+          The best zero-drop running shoes in town.
         </p>
       </div>
     </div>

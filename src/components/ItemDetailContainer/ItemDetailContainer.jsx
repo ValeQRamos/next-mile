@@ -1,7 +1,6 @@
 import "./ItemDetailContainer.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getProductById } from "../../utils/data";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 // Firestore

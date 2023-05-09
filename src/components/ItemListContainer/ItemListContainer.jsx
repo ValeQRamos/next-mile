@@ -1,13 +1,10 @@
 import "./ItemListContainer.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getProducts } from "../../utils/data";
 
 // Firestore
 import {
   collection,
-  doc,
-  getDoc,
   getDocs,
   getFirestore,
   query,

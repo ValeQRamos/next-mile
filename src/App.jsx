@@ -16,13 +16,13 @@ function App() {
           <Route
             path="/"
             element={
-              <ItemListContainer greeting="Something cool to say here..." />
+              <ItemListContainer greeting="Something cool..." />
             }
           />
           <Route
             path="/category/:type"
             element={
-              <ItemListContainer greeting="Something cool to say here..." />
+              <ItemListContainer greeting="Something cool..." />
             }
           />
           <Route path="/detail/:id" element={<ItemDetailContainer />} />

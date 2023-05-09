@@ -58,7 +58,7 @@ const ItemListContainer = ({ greeting }) => {
     <>
       {!type && <Hero />}
       <section className="container content">
-        <h2 className="item-title"> {greeting} </h2>
+        {!type && <h2 className="item-title"> {greeting} </h2>}
         <div className="item-list">
           <ItemList products={products} />
         </div>

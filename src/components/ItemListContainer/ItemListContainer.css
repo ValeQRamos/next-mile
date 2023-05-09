@@ -16,3 +16,13 @@
   line-height: 30px;
   letter-spacing: 1.2px;
 }
+
+.item-list {
+  margin-top: 36px;
+}
+
+@media (max-width: 600px) {
+  .item-list {
+    margin-top: 31px;
+  }
+}

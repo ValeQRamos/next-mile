@@ -5,7 +5,6 @@
 .empty-cart {
   margin-top: 85px;
   font-size: 40px;
-  text-align: center;
   font-weight: 300;
 }
 
@@ -63,6 +62,26 @@
 
 .checkout-cart {
   text-decoration: none;
+}
+
+.empty-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-container a {
+  text-decoration: none;
+  font-size: 20px;
+  background-color: var(--secondary-blue-color);
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.empty-btn-container {
+  margin-top: 25px;
 }
 
 @media (max-width: 600px) {

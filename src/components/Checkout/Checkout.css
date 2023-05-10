@@ -28,6 +28,10 @@ h3 {
   font-weight: 700;
 }
 
+.order-id p {
+  text-align: center;
+}
+
 .check-icon {
   color: limegreen;
   font-size: 100px;
@@ -51,11 +55,14 @@ h3 {
 }
 
 @media (max-width: 600px) {
+  .order-confirme {
+    border: 1px solid crimson;
+  }
   .check-icon {
-    font-size: 55px;
+    font-size: 50px;
   }
   .order-confirmed h1 {
-    font-size: large;
+    font-size: medium;
   }
   .order-confirmed p {
     font-size: small;

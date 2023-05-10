@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 const CheckoutForm = ({ handleChange, dataForm, creatingOrder }) => {
   const { totalToPay } = useCartContext();
+
   return (
     <div className="checkout-form">
       <h1>Checkout</h1>
@@ -12,7 +13,7 @@ const CheckoutForm = ({ handleChange, dataForm, creatingOrder }) => {
           <input
             type="text"
             name="name"
-            required
+            required={true}
             value={dataForm.name}
             onChange={handleChange}
           />
@@ -38,14 +39,21 @@ const CheckoutForm = ({ handleChange, dataForm, creatingOrder }) => {
           />
           <label>Email</label>
         </div>
-        <p className="create-order-text">
-          Total to pay: <span> $ {totalToPay()} </span>
-        </p>
+        <div className="create-order-text">
+          <p>Total to pay: <span> ${totalToPay()} </span> </p>
+          <small className="create-order-small">
+          Fill in all the fields to complete order
+        </small>
+        </div>
+        
         <motion.button
           className="create-order-btn"
           onClick={creatingOrder}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          disabled={
+            !dataForm.name || !dataForm.email || !dataForm.phone ? true : false
+          }
         >
           Create Order
         </motion.button>

@@ -3,6 +3,8 @@ import "./CartContainer.css";
 
 import { Link } from "react-router-dom";
 
+import { motion } from "framer-motion";
+
 const CartContainer = () => {
   const { cartList, clearCart, removeItem, totalToPay } = useCartContext();
 
@@ -38,11 +40,13 @@ const CartContainer = () => {
             Checkout
           </Link>
         </div>
-        
       </div>
     ) : (
-      <div>
+      <div className="empty-container">
         <h1 className="empty-cart">Empty Cart</h1>
+        <motion.div className="empty-btn-container" whileHover={{ scale: 1.1 }}>
+          <Link to="/">Back To Home</Link>
+        </motion.div>
       </div>
     );
   }

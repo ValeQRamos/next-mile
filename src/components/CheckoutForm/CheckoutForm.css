@@ -11,7 +11,7 @@
   margin-bottom: 30px;
 }
 
-.create-order-text > span {
+.create-order-text > p > span {
   color: lightblue;
 }
 
@@ -58,6 +58,8 @@
   outline: 0;
 }
 
+
+
 @media (max-width: 600px) {
   .checkout-form {
     padding: 5px 10px;
@@ -68,7 +70,8 @@
   .form-control {
     margin: 10px 0 20px;
   }
-  .form-control input, label {
+  .form-control input,
+  label {
     font-size: 14px;
   }
   .create-order-btn {

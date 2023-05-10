@@ -50,8 +50,11 @@ const Checkout = () => {
         <div className="order-confirmed">
           <HiOutlineCheckCircle className="check-icon" />
           <h3> Hey {dataForm?.name} </h3>
-          <h1> Your order is Confirmed! </h1>
-          <p> Order Id : {orderId} </p>
+          <h1> Your order is Completed </h1>
+          <div className="order-id">
+          <p> Order Id :</p>
+          <p> {orderId}  </p>
+          </div>
           <Link className="link-back" to="/">Back to Home</Link>
         </div>
       </div>

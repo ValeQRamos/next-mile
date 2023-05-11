@@ -1,6 +1,7 @@
-import notFound from "../../assets/404.png";
 import "./NotFound.css";
+import notFound from "../../assets/404.png";
 import { NavLink } from "react-router-dom";
+
 const NotFound = () => {
   return (
     <div className="error-container">

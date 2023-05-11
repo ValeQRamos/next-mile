@@ -1,11 +1,13 @@
 import "./Checkout.css";
 import { useState } from "react";
 import { useCartContext } from "../../context/CartContext";
-import CheckoutForm from "../CheckoutForm/CheckoutForm";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
-
 import { HiOutlineCheckCircle } from "react-icons/hi";
 import { Link } from "react-router-dom";
+// Firebase
+import { addDoc, collection, getFirestore } from "firebase/firestore";
+// Components
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
+
 
 const Checkout = () => {
   const { cartList, clearCart, removeItem, totalToPay } = useCartContext();

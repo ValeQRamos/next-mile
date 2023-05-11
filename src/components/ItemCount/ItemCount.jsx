@@ -1,8 +1,6 @@
 import "./ItemCount.css";
 import { useState } from "react";
-
 import { HiOutlinePlus, HiOutlineMinus } from "react-icons/hi";
-
 import { motion } from "framer-motion";
 
 const ItemCount = ({ stock, initial, onAdd }) => {

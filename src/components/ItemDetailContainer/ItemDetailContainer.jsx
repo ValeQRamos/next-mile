@@ -1,10 +1,11 @@
 import "./ItemDetailContainer.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import ItemDetail from "../ItemDetail/ItemDetail";
-
 // Firestore
 import { doc, getDoc, getFirestore } from "firebase/firestore";
+// Components
+import ItemDetail from "../ItemDetail/ItemDetail";
+
 
 const ItemDetailContainer = () => {
   const [isLoading, setIsLoading] = useState(true);

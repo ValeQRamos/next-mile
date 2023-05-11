@@ -3,7 +3,6 @@ import ItemCount from "../ItemCount/ItemCount";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
-
 import { BiCaretLeft, BiCaretRight } from "react-icons/bi";
 import { motion } from "framer-motion";
 

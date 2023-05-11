@@ -1,8 +1,6 @@
-import { useCartContext } from "../../context/CartContext";
 import "./CartContainer.css";
-
+import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
-
 import { motion } from "framer-motion";
 
 const CartContainer = () => {

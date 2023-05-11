@@ -19,7 +19,7 @@ const Hero = () => {
             <div className="h2-content">
               <h2>Running</h2>
               <h2>Better</h2>
-              <h2>Everyday</h2>
+              <h2>Every day</h2>
             </div>
           </div>
         </div>

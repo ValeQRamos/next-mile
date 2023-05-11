@@ -30,12 +30,12 @@
 .h2-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .h2-content h2 {
   font-size: 75px;
-  margin-right: 85px;
+  width: 50vh;
+  text-align: left;
 }
 
 @media (max-width: 600px) {
@@ -46,6 +46,6 @@
     font-size: 14px;
   }
   .h2-content h2 {
-    font-size: 45px
+    font-size: 35px;
   }
 }

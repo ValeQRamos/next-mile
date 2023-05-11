@@ -10,9 +10,9 @@
   transform: translate(-50%, -50%);
 }
 
-.text-content h1{
+.text-content h1 {
   color: #fff;
-  font-size: 65px;
+  font-size: 75px;
   width: 100vh;
   text-align: center;
   font-weight: 300;
@@ -27,11 +27,25 @@
   margin-top: 15px;
 }
 
+.h2-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.h2-content h2 {
+  font-size: 75px;
+  width: 50vh;
+  text-align: left;
+}
+
 @media (max-width: 600px) {
   .text-content h1 {
-    font-size: 25px;
+    font-size: 35px;
   }
   .text-content p {
     font-size: 14px;
+  }
+  .h2-content h2 {
+    font-size: 35px;
   }
 }

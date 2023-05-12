@@ -1,9 +1,10 @@
 import "./ItemCount.css";
 import { useState } from "react";
 import { HiOutlinePlus, HiOutlineMinus } from "react-icons/hi";
+import { toast } from "react-toastify";
 import { motion } from "framer-motion";
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ title, stock, initial, onAdd }) => {
   const [quantity, setQuantity] = useState(initial);
 
   const increment = () => {
@@ -16,6 +17,11 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
     }
+  };
+
+  const handleAdd = () => {
+    onAdd(quantity);
+    toast.success(`(${quantity}) ${title} added to your cart`);
   };
 
   return (
@@ -43,7 +49,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         <motion.button
           className="btn btn-quantity"
           whileHover={{ scale: 1.1 }}
-          onClick={() => onAdd(quantity)}
+          onClick={handleAdd}
         >
           Add to cart
         </motion.button>

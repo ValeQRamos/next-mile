@@ -2,9 +2,20 @@ import "./CartContainer.css";
 import { useCartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
 
 const CartContainer = () => {
   const { cartList, clearCart, removeItem, totalToPay } = useCartContext();
+
+  const clearBtn = () => {
+    clearCart();
+    toast("All items removed from your cart");
+  };
+
+  const removeBtn = (id, title) => {
+    removeItem(id);
+    toast(`${title} Removed from your cart`);
+  };
 
   {
     return cartList.length ? (
@@ -22,7 +33,10 @@ const CartContainer = () => {
                 {prod.title} | Price: ${prod.price} | Qty: {prod.quantity}
               </p>
             </label>
-            <button className="remove-item" onClick={() => removeItem(prod.id)}>
+            <button
+              className="remove-item"
+              onClick={() => removeBtn(prod.id, prod.title)}
+            >
               X
             </button>
           </div>
@@ -31,7 +45,7 @@ const CartContainer = () => {
           Total: <span> ${totalToPay()} </span>
         </h2>
         <div className="clear-cart-container">
-          <button className="clear-cart" onClick={clearCart}>
+          <button className="clear-cart" onClick={clearBtn}>
             Clear Cart
           </button>
           <Link to={"/checkout"} className="clear-cart checkout-cart">

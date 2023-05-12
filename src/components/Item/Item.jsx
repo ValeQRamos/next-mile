@@ -24,7 +24,7 @@ const Item = ({ product }) => {
       </header>
       <div className="item-img">
         <Link to={`/detail/${id}`}>
-          <img src={img[0]} alt={title} />
+          <img src={img[0]} alt={title} className="img" />
         </Link>
       </div>
       <footer className="item-footer">

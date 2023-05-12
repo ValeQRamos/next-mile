@@ -17,7 +17,7 @@
 
 .form-control {
   position: relative;
-  margin: 20px 0 40px;
+  margin: 10px 0 20px;
   width: 300px;
 }
 
@@ -27,7 +27,7 @@
   border-bottom: 2px #fff solid;
   display: block;
   width: 100%;
-  padding: 15px 0;
+  padding: 7px 0;
   font-size: 18px;
   color: #fff;
 }
@@ -68,7 +68,7 @@
     font-size: 24px;
   }
   .form-control {
-    margin: 10px 0 20px;
+    margin: 5px 0 10px;
   }
   .form-control input,
   label {

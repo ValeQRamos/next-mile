@@ -39,20 +39,37 @@ const CheckoutForm = ({ handleChange, dataForm, creatingOrder }) => {
           />
           <label>Email</label>
         </div>
-        <div className="create-order-text">
-          <p>Total to pay: <span> ${totalToPay()} </span> </p>
-          <small className="create-order-small">
-          Fill in all the fields to complete order
-        </small>
+        <div className="form-control">
+          <input
+            type="email"
+            name="email2"
+            required
+            value={dataForm.email2}
+            onChange={handleChange}
+          />
+          <label>Email </label>
         </div>
-        
+        <div className="create-order-text">
+          <p>
+            Total to pay: <span> ${totalToPay()} </span>{" "}
+          </p>
+          <small className="create-order-small">
+            Fill in all the fields to complete order
+          </small>
+        </div>
+
         <motion.button
           className="create-order-btn"
           onClick={creatingOrder}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           disabled={
-            !dataForm.name || !dataForm.email || !dataForm.phone ? true : false
+            !dataForm.name ||
+            !dataForm.email ||
+            !dataForm.phone ||
+            dataForm.email !== dataForm.email2
+              ? true
+              : false
           }
         >
           Create Order

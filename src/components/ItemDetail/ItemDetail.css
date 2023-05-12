@@ -45,7 +45,6 @@
 }
 
 .item-detail-subtitle {
-  text-align: center;
   font-size: 0.9rem;
   padding: 10px 5px;
   font-weight: 400;
@@ -53,6 +52,7 @@
 
 .item-detail-description {
   padding: 10px 5px;
+  text-align: center;
 }
 
 .btn-read-more {

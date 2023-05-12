@@ -79,7 +79,12 @@ const ItemDetail = ({ product }) => {
             </Link>
           </div>
         ) : (
-          <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />
+          <ItemCount
+            title={title}
+            initial={1}
+            stock={stock}
+            onAdd={handleOnAdd}
+          />
         )}
       </div>
     </div>

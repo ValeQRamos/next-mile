@@ -3,6 +3,7 @@
   margin: 40px 10px;
   max-width: 380px;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .item-header {
@@ -42,6 +43,10 @@
   border-radius: 10px 10px 0 0;
 }
 
+.img {
+  width: 380px;
+}
+
 .btn-details {
   height: 100%;
   font-family: inherit;
@@ -52,10 +57,8 @@
   border-radius: 0 10px 0px 10px;
   cursor: pointer;
   border: none;
-  box-shadow: 0px 2px 0px 0px var(--primary-dark-color);
+  box-shadow: rgba(0, 0, 0, 0.15) -1px 1px 1.6px;
 }
-
-
 
 .btn-details:focus {
   outline: none;
@@ -70,7 +73,6 @@
 
 .item-footer h3 {
   font-weight: 300;
-  padding-top: 4px;
 }
 .item-footer h4 {
   font-weight: 400;

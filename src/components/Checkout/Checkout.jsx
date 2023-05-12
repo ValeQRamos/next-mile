@@ -17,6 +17,7 @@ const Checkout = () => {
     name: "",
     phone: "",
     email: "",
+    email2:""
   });
 
   const creatingOrder = (e) => {

@@ -8,8 +8,8 @@ const Hero = () => {
   return (
     <>
       <div className="video-container">
-      <div className="overlay"></div>
-        <video src={videoBg} autoPlay loop muted />
+        <div className="overlay"></div>
+        <video src={videoBg} autoPlay controls={false} loop={true} muted typeof="video/mp4" />
         <div className="video-text">
           <h1>Welcome to Next Mile</h1>
           <p>The best zero-drop running shoes in town</p>
